@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/me_bg_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_idea_back"
+            style="@style/BackStyle"
+            android:src="@drawable/i_back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/idea_title"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_white_circle_5dp">
+
+        <com.jason.hdxw.base.ClearEditText
+            android:id="@+id/et_idea"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:hint="@string/idea_hint"
+            android:maxLength="200"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp" />
+
+        <TextView
+            android:id="@+id/tv_idea_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="15dp"
+            android:text="0/200"
+            android:textColor="@color/idea_count"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_idea_sure"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/bg_blue_circle_5dp"
+        android:gravity="center"
+        android:text="@string/kiting_sure"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshlayout_idea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:srlAccentColor="@android:color/white"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableArrow="@drawable/arrow_down_icon"
+            app:srlDrawableArrowSize="18dp"
+            app:srlDrawableMarginRight="20dp"
+            app:srlDrawableProgress="@drawable/loading_icon"
+            app:srlDrawableProgressSize="20dp"
+            app:srlDrawableSize="25dp"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlPrimaryColor="@color/black"
+            app:srlTextSizeTime="10dp"
+            app:srlTextSizeTitle="15sp"
+            app:srlTextTimeMarginTop="2dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_idea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:srlAccentColor="@android:color/white"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableArrow="@drawable/arrow_up_icon"
+            app:srlDrawableArrowSize="18dp"
+            app:srlDrawableMarginRight="20dp"
+            app:srlDrawableProgress="@drawable/loading_icon"
+            app:srlDrawableProgressSize="20dp"
+            app:srlDrawableSize="25dp"
+            app:srlFinishDuration="500"
+            app:srlPrimaryColor="@color/black"
+            app:srlTextSizeTitle="15sp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

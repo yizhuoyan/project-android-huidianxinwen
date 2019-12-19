@@ -1,0 +1,184 @@
+<resources>
+    <string name="app_name">慧点新闻</string>
+
+    <!-- 登录 -->
+    <string name="login_register">没有账号，去注册</string>
+    <string name="login_phone_input_hint">请输入账号</string>
+    <string name="login_password_input_hint">请输入密码</string>
+    <string name="login_forget">忘记密码？</string>
+    <string name="login_text">登录</string>
+
+    <!-- 注册 -->
+    <string name="register_text">注册</string>
+    <string name="register_hint">手机号仅用于登录和保护账号安全</string>
+    <string name="register_over">完成</string>
+    <string name="register_phone_input_hint">请输入您的手机号码</string>
+    <string name="register_code_input_hint">输入验证码</string>
+    <string name="register_send_code">获取验证码</string>
+    <string name="register_password_input_hint1">请输入登录密码</string>
+    <string name="register_password_input_hint2">请确认登录密码</string>
+    <string name="register_password_input_kiting1">请输入提现密码</string>
+    <string name="register_password_input_kiting2">请确认提现密码</string>
+    <string name="register_account">请输入注册账号</string>
+    <string name="register_name">请输入您的姓名</string>
+    <string name="register_verifynum">请输入验证码</string>
+    <string name="register_verifyimg">请输入图形验证码</string>
+    <string name="register_activate">请输入激活码(必填)</string>
+    <string name="register_recommend">请输入推荐码(必填)</string>
+    <string name="register_remark">点击"完成"即表示同意</string>
+    <string name="register_agreement">《使用协议》</string>
+    <string name="register_agreement_title">使用协议</string>
+
+    <!--找回密码-->
+    <string name="forget_name">忘记登录密码?</string>
+    <string name="forget_newpwdname">请设置新的登录密码</string>
+    <string name="forget_phone_input">请输入手机号码</string>
+    <string name="forget_next">下一步</string>
+    <string name="forget_newpwdinput">请输入新的登录密码</string>
+    <string name="forget_sure">确定</string>
+    <string name="forget_success">修改成功</string>
+    <string name="forget_storage">请您保管好自己的密码，以防再次丢失</string>
+
+    <!--修改密码-->
+    <string name="changepwd_title">修改密码</string>
+    <string name="changepwd_login">修改登录密码</string>
+    <string name="changepwd_pay">修改提现密码</string>
+    <string name="changepwd_login_old">请输入现登录密码</string>
+    <string name="changepwd_pay_old">请输入现提现密码</string>
+    <string name="changepwd_login_new">请输入新登录密码</string>
+    <string name="changepwd_login_new2">请再次输入新登录密码</string>
+    <string name="changepwd_pay_new">请输入新提现密码</string>
+    <string name="changepwd_pay_new2">请再次输入新提现密码</string>
+    <string name="changepwd_oldpwd">请输入现密码</string>
+    <string name="changepwd_newpwd">请输入新密码</string>
+    <string name="changepwd_newpwd2">请确认新密码</string>
+
+    <!--<string name="changepwd_hint">发送验证码短信到</string>-->
+    <!--<string name="changepwd_hint2">已发送验证码短信到</string>-->
+
+
+    <!--公告测试内容-->
+    <string name="noticedetails_test">采集新闻信息，开始挂机随机浏览新闻，每1分钟浏览一次 \n
+每次浏览10秒，每次增加金额0.02000-0.06999元, 金额涨到80，停止收益，挂机结束。凌晨结算收益到余额，有多少结算多少。每次浏览10秒，每次增加金额0.02000-0.06999元, 金额涨到80，停止收益，挂机结束。凌晨结算收益到余额，有多少结算多少。每次浏览10秒，每次增加金额0.02000-0.06999元, 金额涨到80，停止收益，挂机结束。凌晨结算收益到余额，有多少结算多少。
+每次浏览10秒，每次增加金额0.02000-0.06999元, 金额涨到80，停止收益，挂机结束。凌晨结算收益到余额，有多少结算多少。</string>
+
+    <!--提现-->
+    <string name="kiting_money">请输入提现金额</string>
+    <string name="kiting_pwd">请输入密码</string>
+    <!--<string name="kiting_require">提现金额必须是100的倍数！手续费：10%</string>-->
+    <string name="kiting_sure">确认</string>
+    <string name="kiting_bind_bank">去绑卡</string>
+
+    <!--收益明细-->
+    <string name="earnings_addup">累计收益</string>
+
+    <!--我的团队-->
+    <string name="team_name">我的团队</string>
+    <string name="team_count">团队总人数</string>
+    <string name="team_one">一级会员</string>
+    <string name="team_two">二级会员</string>
+    <string name="team_three">三级会员</string>
+    <string name="team_invite">邀请好友</string>
+
+    <!--邀请好友-->
+    <string name="invite_exclusive">您的专属邀请码</string>
+    <string name="invite_copy">复制邀请码</string>
+    <!--<string name="invite_explain1">复制邀请激活码发送给好友，好友注册后就是你的直推，朋友识别你的二维码，一样成为你的直推</string>-->
+    <string name="invite_explain1">复制邀请激活码发送给好友，好友注册后就是你的直推</string>
+    <string name="invite_explain2">直推人数越多，您的收益越高哦~</string>
+
+    <!--个人设置-->
+    <string name="setting_title">个人设置</string>
+    <string name="setting_head">头像</string>
+    <string name="setting_phone">手机绑定</string>
+    <string name="setting_name">姓名</string>
+    <string name="setting_bankcard">银行卡管理</string>
+    <string name="setting_bind_wx">绑定微信</string>
+    <string name="setting_bind_zfb">绑定支付宝</string>
+    <string name="setting_input_wx">请输入微信账号</string>
+    <string name="setting_input_zfb">请输入支付宝账号</string>
+    <string name="setting_input_name">请输入收款人姓名</string>
+    <string name="setting_hint_wx">注: 请上传微信收款码</string>
+    <string name="setting_hint_zfb">注: 请上传支付宝收款码</string>
+    <string name="setting_exit">退出登录</string>
+
+    <!--银行卡管理-->
+    <string name="bankcard_title">银行卡</string>
+    <string name="bankcard_hint_title">温馨提示</string>
+    <string name="bankcard_hint">只能绑定一张储蓄卡，\n绑定后可以使用该卡进行交易；\n若有疑问，请拨打客服热线：</string>
+    <string name="bankcard_hint_nocard1">添加银行卡方便资产管理</string>
+    <string name="bankcard_hint_nocard2">享受交易服务</string>
+    <string name="bankcard_addcard">添加银行卡</string>
+
+    <!--添加银行卡-->
+    <string name="bankcard_add_title">添加银行卡</string>
+    <string name="bankcard_add_input1">请输入银行卡的卡号</string>
+    <string name="bankcard_add_input2">请输入银行卡的开户行</string>
+    <string name="bankcard_add_input3">请输入持卡人姓名</string>
+    <string name="bankcard_add_sure">确认添加</string>
+    <string name="bankcard_edit_title">编辑银行卡</string>
+
+    <!--意见反馈-->
+    <string name="idea_title">意见反馈</string>
+    <string name="idea_hint">请输入您的问题，我们将尽快给您回复</string>
+
+    <!--关于我们-->
+    <string name="about_title">关于我们</string>
+
+    <!--版本信息-->
+    <string name="version_title">版本信息</string>
+    <string name="version_email">邮箱</string>
+    <string name="version_service">客服</string>
+    <string name="version_code">版本号</string>
+
+    <!--新手教程-->
+    <string name="novice_title">赚钱攻略</string>
+
+    <!--提示语-->
+    <string name="norecord1">亲，您还没有记录哦~</string>
+    <string name="norecord2">暂无数据</string>
+    <string name="network_error">网络繁忙,请稍后重试!</string>
+    <string name="analysis_error">解析数据失败</string>
+    <!--<string name="transition_error">数据转换异常</string>-->
+    <string name="index_today">今日\t</string>
+    <string name="index_balance">我的余额：</string>
+
+    <string name="hint_exit">再按一次退出程序</string>
+    <string name="hint_account">请输入账号</string>
+    <string name="hint_nonumber">用户名不能是纯数字</string>
+    <string name="hint_nochar">用户名不能是纯汉字</string>
+    <string name="hint_phone">请输入手机号</string>
+    <string name="hint_name">请输入姓名</string>
+    <string name="hint_img_verify">请输入图形验证码</string>
+    <string name="hint_pwd">请输入登录密码</string>
+    <string name="hint_pwd_too">请确认登录密码</string>
+    <string name="hint_kitingpwd">请输入提现密码</string>
+    <string name="hint_kitingpwd_too">请确认提现密码</string>
+    <string name="hint_activate_num">请输入激活码</string>
+    <string name="hint_recommend_num">请输入推荐码</string>
+    <string name="hint_register_succeed">注册成功</string>
+    <string name="hint_submitidea">请输入要反馈的内容</string>
+    <string name="hint_copy">复制成功</string>
+    <string name="hint_bankcardNum">请输入银行卡号</string>
+    <string name="hint_bankcardType">请输入银行卡开户行</string>
+    <string name="hint_bankcardName">请输入持卡人姓名</string>
+    <string name="hint_bankcardVerify">请输入正确的银行卡号</string>
+    <string name="hint_addbankSucceed">添加成功</string>
+    <string name="hint_changeHead_Failure">未获取图片</string>
+    <string name="hint_changeHead_Succeed">更换成功</string>
+    <string name="hint_noCard">请先绑定银行卡</string>
+    <string name="hint_kiting_succeed">提现成功</string>
+    <string name="hint_logout_app">确定要退出登录吗？</string>
+    <string name="hint_logout_yes">确认</string>
+    <string name="hint_logout_no">取消</string>
+    <string name="hint_logout_succeed">退出成功</string>
+    <string name="hint_noMoreData">没有更多数据</string>
+    <string name="hint_service">请联系客服</string>
+    <string name="hint_close">退出</string>
+    <string name="hint_loading">去下载</string>
+    <string name="hint_exploit">开发中</string>
+    <string name="hint_update">升级数据解析失败</string>
+
+    <!--文字补全-->
+
+</resources>

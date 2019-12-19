@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/partition_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_bankcardedit_back"
+            style="@style/BackStyle"
+            android:src="@drawable/i_back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/bankcard_edit_title"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.jason.hdxw.base.ClearEditText
+            android:id="@+id/et_bankcardedit_cardnum"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/bankcard_add_input1"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingLeft="14dp" />
+
+        <include layout="@layout/segmentation_gray" />
+
+        <com.jason.hdxw.base.ClearEditText
+            android:id="@+id/et_bankcardedit_cardtype"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/bankcard_add_input2"
+            android:maxLines="1"
+            android:paddingLeft="14dp" />
+
+        <include layout="@layout/segmentation_gray" />
+
+        <com.jason.hdxw.base.ClearEditText
+            android:id="@+id/et_bankcardedit_cardname"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/bankcard_add_input3"
+            android:maxLines="1"
+            android:paddingLeft="14dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_bankcardedit_sure"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_blue_circle_5dp"
+        android:gravity="center"
+        android:text="@string/kiting_sure"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</LinearLayout>

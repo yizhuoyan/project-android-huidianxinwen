@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/partition_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_invite_bg"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:background="@drawable/invite_bj"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="174dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/invite_title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_invite_top"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_invite_back"
+                style="@style/BackStyle"
+                android:src="@drawable/i_back_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_invite_num"
+            android:layout_width="316dp"
+            android:layout_height="204dp"
+            android:layout_below="@id/linear_invite_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-50dp"
+            android:background="@drawable/invite_box"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/invite_exclusive"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_invite_invitenum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/but_tintblue"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/tv_invite_copy"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/invite_button"
+                android:gravity="center"
+                android:text="@string/invite_copy"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25dp"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/invite_explain1"
+                android:textColor="@color/invite_explain_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_invite_invitenum"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_below="@id/linear_invite_num"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:background="@color/gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_invite_invitenum"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="@string/invite_explain2"
+            android:textColor="@color/invite_blue"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

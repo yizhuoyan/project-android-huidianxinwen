@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linear_myteam_bg"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@drawable/ico_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relative_myteam_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/iv_myteam_back"
+                style="@style/BackStyle"
+                android:src="@drawable/i_back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/team_name"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/team_count"
+            android:textColor="@color/earnings_txt"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_myteam_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_myteam_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_myteam_bg"
+        android:layout_marginTop="-30dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/team_box1"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_myteam_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_one"
+                android:textColor="@color/hint_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="-5dp"
+            android:background="@drawable/team_box2"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_myteam_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_two"
+                android:textColor="@color/hint_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="-5dp"
+            android:background="@drawable/team_box3"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/tv_myteam_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_three"
+                android:textColor="@color/hint_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_myteam"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/linear_myteam_count"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/kiting_cardnum"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/hint_gray" />
+
+    <TextView
+        android:id="@+id/tv_myteam_invite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/but_tintblue"
+        android:gravity="center"
+        android:text="@string/team_invite"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tv_myteam_invite"
+        android:layout_below="@id/tab_myteam">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshlayout_myteam"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                app:srlAccentColor="@android:color/white"
+                app:srlClassicsSpinnerStyle="Translate"
+                app:srlDrawableArrow="@drawable/arrow_down_icon"
+                app:srlDrawableArrowSize="18dp"
+                app:srlDrawableMarginRight="20dp"
+                app:srlDrawableProgress="@drawable/loading_icon"
+                app:srlDrawableProgressSize="20dp"
+                app:srlDrawableSize="25dp"
+                app:srlEnableLastTime="true"
+                app:srlFinishDuration="500"
+                app:srlPrimaryColor="@color/black"
+                app:srlTextSizeTime="10dp"
+                app:srlTextSizeTitle="15sp"
+                app:srlTextTimeMarginTop="2dp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_myteam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                app:srlAccentColor="@android:color/white"
+                app:srlClassicsSpinnerStyle="Translate"
+                app:srlDrawableArrow="@drawable/arrow_up_icon"
+                app:srlDrawableArrowSize="18dp"
+                app:srlDrawableMarginRight="20dp"
+                app:srlDrawableProgress="@drawable/loading_icon"
+                app:srlDrawableProgressSize="20dp"
+                app:srlDrawableSize="25dp"
+                app:srlFinishDuration="500"
+                app:srlPrimaryColor="@color/black"
+                app:srlTextSizeTitle="15sp" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_myteam_nodata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="225dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ico_nodata">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/norecord2"
+                    android:textColor="@color/notice_gray"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

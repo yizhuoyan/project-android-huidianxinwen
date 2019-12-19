@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 设置整个屏幕背景为白色 -->
+    <!--<item >-->
+        <!--<color android:color="@color/white"/>-->
+    <!--</item>-->
+
+    <!-- 中间logo -->
+    <!--android:gravity=""-->
+    <item >
+        <bitmap
+            android:src="@mipmap/startpage_h" />
+    </item>
+    <!--&lt;!&ndash; 底部图表 &ndash;&gt;-->
+    <!--<item android:bottom="10dp">-->
+    <!--<bitmap-->
+    <!--android:gravity="bottom|center_horizontal"-->
+    <!--android:src="@drawable/copyright" />-->
+    <!--</item>-->
+
+</layer-list>
