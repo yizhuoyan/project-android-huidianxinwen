@@ -13,7 +13,8 @@ public class API {
 //    public static final String BASE = "http://47.97.109.131/index.php?m=";
 
     //public static final String BASE = "http://121.40.11.219/index.php?m=";
-    public static final String BASE = "http://x1.zxzyw.net/index.php?m=";
+//    public static final String BASE = "http://x1.zxzyw.net/index.php?m=";
+    public static final String BASE = "http://121.40.11.219/index.php?m=";
     //TODO 基础模块
     //手机短信验证码
     public static final String BASIC_OTP=BASE+"jason&c=public&a=sendCode";
