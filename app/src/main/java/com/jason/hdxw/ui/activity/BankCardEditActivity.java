@@ -3,10 +3,14 @@ package com.jason.hdxw.ui.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hjq.toast.ToastUtils;
+import com.jason.hdxw.utils.OTPSendUtil;
+import com.jason.hdxw.utils.Strings;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -40,6 +44,11 @@ public class BankCardEditActivity extends WhiteBarActivity {
     ClearEditText mEtBankcardeditCardname;
     @BindView(R.id.tv_bankcardedit_sure)
     TextView mTvBankcardeditSure;
+    @BindView(R.id.et_otp)
+    EditText mEtOtp;
+    @BindView(R.id.btn_otp)
+    Button mBtnOtp;
+
     private BankCardMsg mBankCardMsg;
 
     @Override
@@ -64,6 +73,12 @@ public class BankCardEditActivity extends WhiteBarActivity {
                 addBankCard();
             }
         });
+        mBtnOtp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendOTP();
+            }
+        });
     }
 
     private void initData() {
@@ -79,7 +94,24 @@ public class BankCardEditActivity extends WhiteBarActivity {
         }
 
     }
-
+    private void sendOTP(){
+        OTPSendUtil.send(this,"edit_bank_card");
+        mBtnOtp.setEnabled(false);
+        new Runnable() {
+            int leftSeconds=60;
+            @Override
+            public void run() {
+                mBtnOtp.setText(leftSeconds+"s后可再次发送");
+                leftSeconds--;
+                if(leftSeconds>0) {
+                    postDelayed(this, 1000);
+                }else{
+                    mBtnOtp.setText(R.string.changepwd_otp_btn_txt);
+                    mBtnOtp.setEnabled(true);
+                }
+            }
+        }.run();
+    }
     /**
      * 添加银行卡
      */
@@ -100,11 +132,17 @@ public class BankCardEditActivity extends WhiteBarActivity {
             ToastUtils.show(getString(R.string.hint_bankcardName));
             return;
         }
+        String otp= Strings.trim(mEtOtp.getText());
+        if(otp==null){
+            ToastUtils.show(getString(R.string.changepwd_otp_hint));
+            return;
+        }
         OkGo.<String>post(MEMBER_BANK_ADD)
                 .params("token", UserCache.getToken())
                 .params("bankaddress", mEtBankcardeditCardtype.getText().toString().trim())
                 .params("banknum", mEtBankcardeditCardnum.getText().toString().trim())
                 .params("idcard", mEtBankcardeditCardname.getText().toString().trim())
+                .params("code",otp)
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {

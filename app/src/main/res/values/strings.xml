@@ -52,9 +52,12 @@
     <string name="changepwd_oldpwd">请输入现密码</string>
     <string name="changepwd_newpwd">请输入新密码</string>
     <string name="changepwd_newpwd2">请确认新密码</string>
+    <string name="changepwd_otp_hint">请输入收到的验证码</string>
+    <string name="changepwd_otp_btn_txt">点击发送验证码</string>
+
 
     <!--<string name="changepwd_hint">发送验证码短信到</string>-->
-    <!--<string name="changepwd_hint2">已发送验证码短信到</string>-->
+    <string name="changepwd_hint2">已发送验证码短信到</string>
 
 
     <!--公告测试内容-->

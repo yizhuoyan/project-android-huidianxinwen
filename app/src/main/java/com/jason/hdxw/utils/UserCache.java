@@ -2,8 +2,11 @@ package com.jason.hdxw.utils;
 
 import android.content.Context;
 import android.provider.Settings;
+import android.util.Log;
 
+import com.hjq.toast.ToastUtils;
 import com.jason.hdxw.app.App;
+import com.orhanobut.logger.Logger;
 
 /**
  * 管理用户
@@ -11,6 +14,42 @@ import com.jason.hdxw.app.App;
  */
 public class UserCache {
 
+    /**
+     * 保存商城跳转网页连接
+     * @param url
+     */
+    public static void setIndexShopURL(String url){
+        url=Strings.trim(url);
+        if(url!=null) {
+            SPUtil.put(App.getApplication(), "index_url_shop", url);
+        }
+    }
+
+    /**
+     * 商城跳转网页连接
+     * @return
+     */
+    public static String getIndexShopURL(){
+        return (String) SPUtil.get(App.getApplication(), "index_url_shop", "");
+    }
+
+    /**
+     * 保存商城入驻跳转网页连接
+     * @param url
+     */
+    public static void setIndexShopInURL(String url){
+        url=Strings.trim(url);
+        if(url!=null) {
+            SPUtil.put(App.getApplication(), "index_url_shop_in", url);
+        }
+    }
+    /**
+     * 商城入驻跳转网页连接
+     * @return
+     */
+    public static String getIndexShopInURL(){
+        return (String) SPUtil.get(App.getApplication(), "index_url_shop_in", "");
+    }
     /**
      * 设置用户token
      *
@@ -94,6 +133,7 @@ public class UserCache {
     public static String getMac() {
         return Settings.System.getString(App.getApplication().getContentResolver(), Settings.System.ANDROID_ID);
     }
+
 
     /**
      * 清除所有数据

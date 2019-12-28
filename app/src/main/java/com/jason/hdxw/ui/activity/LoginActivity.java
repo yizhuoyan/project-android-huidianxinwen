@@ -121,6 +121,10 @@ public class LoginActivity extends WhiteBarActivity implements View.OnClickListe
                             if (jsonObject.getString("status").equals("y")) {
                                 //保存 token
                                 UserCache.setToken(jsonObject.getString("token"));
+                                //保存商城跳转url
+                                UserCache.setIndexShopURL(jsonObject.getString("index_url_shop"));
+                                //保存商城入驻跳转url
+                                UserCache.setIndexShopInURL(jsonObject.getString("index_url_shop_in"));
                                 if (jsonObject.getString("msg") != null) {
                                     ToastUtils.show(jsonObject.getString("msg"));
                                 }

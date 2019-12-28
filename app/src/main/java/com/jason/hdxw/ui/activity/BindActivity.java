@@ -17,6 +17,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +27,8 @@ import com.jason.hdxw.base.ClearEditText;
 import com.jason.hdxw.base.WhiteBarActivity;
 import com.jason.hdxw.bean.WxMsgBean;
 import com.jason.hdxw.bean.ZfbMsgBean;
+import com.jason.hdxw.utils.OTPSendUtil;
+import com.jason.hdxw.utils.Strings;
 import com.jason.hdxw.utils.UserCache;
 import com.google.gson.Gson;
 import com.hjq.toast.ToastUtils;
@@ -73,6 +77,12 @@ public class BindActivity extends WhiteBarActivity implements View.OnClickListen
     TextView mTvBindSure;
     @BindView(R.id.et_bind_name)
     ClearEditText mEtBindName;
+    @BindView(R.id.et_otp)
+    EditText mEtOtp;
+    @BindView(R.id.btn_otp)
+    Button mBtnOtp;
+    @BindView(R.id.container_otp)
+    View containerOtp;
 
     private String mImagePath;
     private Gson mGson = new Gson();
@@ -92,10 +102,12 @@ public class BindActivity extends WhiteBarActivity implements View.OnClickListen
             mTvBindTitle.setText(getString(R.string.setting_bind_wx));
             mEtBindNum.setHint(getString(R.string.setting_input_wx));
             mTvBindHint.setText(getString(R.string.setting_hint_wx));
+            containerOtp.setVisibility(View.GONE);
         } else {
             mTvBindTitle.setText(getString(R.string.setting_bind_zfb));
             mEtBindNum.setHint(getString(R.string.setting_input_zfb));
             mTvBindHint.setText(getString(R.string.setting_hint_zfb));
+            containerOtp.setVisibility(View.VISIBLE);
         }
         getBindMsg(getIntent().getStringExtra("bindType"));
     }
@@ -191,13 +203,17 @@ public class BindActivity extends WhiteBarActivity implements View.OnClickListen
         }
     }
 
-    @OnClick({R.id.iv_bind_back, R.id.iv_bind_add, R.id.tv_bind_sure})
+    @OnClick({R.id.iv_bind_back, R.id.iv_bind_add, R.id.tv_bind_sure,R.id.btn_otp})
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             //关闭
             case R.id.iv_bind_back:
                 finish();
+                break;
+            //发送验证码
+            case R.id.btn_otp:
+                sendOTP();
                 break;
             //添加图片
             case R.id.iv_bind_add:
@@ -237,7 +253,28 @@ public class BindActivity extends WhiteBarActivity implements View.OnClickListen
                 break;
         }
     }
+    /**
+     * 发送验证码
+     */
+    private void sendOTP(){
+        OTPSendUtil.send(this,"edit_alipay");
+        mBtnOtp.setEnabled(false);
+        new Runnable() {
+            int leftSeconds=60;
+            @Override
+            public void run() {
+                mBtnOtp.setText(leftSeconds+"s后可再次发送");
+                leftSeconds--;
+                if(leftSeconds>0) {
+                    postDelayed(this, 1000);
+                }else{
+                    mBtnOtp.setText(R.string.changepwd_otp_btn_txt);
+                    mBtnOtp.setEnabled(true);
+                }
+            }
+        }.run();
 
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -373,6 +410,13 @@ public class BindActivity extends WhiteBarActivity implements View.OnClickListen
                             }
                         });
             } else {
+
+                final String otp= Strings.trim(mEtOtp.getText());
+                if (otp==null) {
+                    ToastUtils.show(getString(R.string.changepwd_otp_hint));
+                    return;
+                }
+
                 OkGo.<String>post(MEMBER_ZFB_SEND)
                         .params("img_url", new File(imagePath))
                         .execute(new StringCallback() {
@@ -386,6 +430,7 @@ public class BindActivity extends WhiteBarActivity implements View.OnClickListen
                                                 .params("alipay", mEtBindNum.getText().toString().trim())
                                                 .params("alipay_qr", jsonObject.getString("zhifubao"))
                                                 .params("alipay_name", mEtBindName.getText().toString().trim())
+                                                .params("code",otp)
                                                 .execute(new StringCallback() {
                                                     @Override
                                                     public void onSuccess(Response<String> response) {

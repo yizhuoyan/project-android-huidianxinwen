@@ -1,6 +1,7 @@
 package com.jason.hdxw.ui.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ import com.jason.hdxw.ui.activity.MyTeamActivity;
 import com.jason.hdxw.ui.activity.NoticeActivity;
 import com.jason.hdxw.ui.activity.NoviceActivity;
 import com.jason.hdxw.utils.DensityUtil;
+import com.jason.hdxw.utils.Strings;
 import com.jason.hdxw.utils.UserCache;
 import com.google.gson.Gson;
 import com.hjq.toast.ToastUtils;
@@ -339,11 +341,21 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
                 break;
             //商家入驻
             case R.id.linear_index_shop_enter:
-                ToastUtils.show("开发中");
+                String shopInURL= Strings.trim(UserCache.getIndexShopInURL());
+                if(shopInURL==null) {
+                    ToastUtils.show("开发中");
+                }else{
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(shopInURL)));
+                }
                 break;
             //商家
             case R.id.linear_index_shop:
-                ToastUtils.show("开发中");
+                String shopURL=Strings.trim(UserCache.getIndexShopURL());
+                if(shopURL==null) {
+                    ToastUtils.show("开发中");
+                }else{
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(shopURL)));
+                }
                 break;
         }
     }

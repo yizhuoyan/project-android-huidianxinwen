@@ -64,6 +64,34 @@
             android:hint="@string/bankcard_add_input3"
             android:maxLines="1"
             android:paddingLeft="14dp" />
+
+        <include layout="@layout/segmentation_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="14dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/et_otp"
+                style="@style/EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:hint="@string/changepwd_otp_hint"
+                />
+
+
+            <Button
+                android:id="@+id/btn_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/changepwd_otp_btn_txt"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <TextView
