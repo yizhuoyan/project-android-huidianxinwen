@@ -92,8 +92,10 @@
         <activity android:name="com.jason.hdxw.ui.activity.BankCardAddActivity" />
         <!--修改密码页面-->
         <activity android:name="com.jason.hdxw.ui.activity.ChangePwdActivity" />
-        <!--修改密码页面2-->
-        <activity android:name="com.jason.hdxw.ui.activity.ChangeLoginOrPayActivity" />
+        <!--修改登录密码页面-->
+        <activity android:name="com.jason.hdxw.ui.activity.ChangeLoginPasswordActivity" />
+        <!--修改支付密码页面-->
+        <activity android:name="com.jason.hdxw.ui.activity.ChangePayPasswordActivity" />
         <!--意见反馈页-->
         <activity android:name="com.jason.hdxw.ui.activity.IdeaActivity" />
         <!--关于我们页-->

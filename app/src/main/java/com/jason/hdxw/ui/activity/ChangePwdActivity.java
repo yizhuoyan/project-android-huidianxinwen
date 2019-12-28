@@ -44,14 +44,12 @@ public class ChangePwdActivity extends WhiteBarActivity implements View.OnClickL
                 break;
             //修改登录密码
             case R.id.tv_changepwd_login:
-                Intent intent_login = new Intent(this, ChangeLoginOrPayActivity.class);
-                intent_login.putExtra("type", "login");
+                Intent intent_login = new Intent(this, ChangeLoginPasswordActivity.class);
                 startActivity(intent_login);
                 break;
             //修改支付密码
             case R.id.tv_changepwd_pay:
-                Intent intent_pay = new Intent(this, ChangeLoginOrPayActivity.class);
-                intent_pay.putExtra("type", "pay");
+                Intent intent_pay = new Intent(this, ChangePayPasswordActivity.class);
                 startActivity(intent_pay);
                 break;
         }
