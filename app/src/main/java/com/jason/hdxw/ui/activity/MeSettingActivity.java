@@ -130,14 +130,12 @@ public class MeSettingActivity extends WhiteBarActivity implements View.OnClickL
                 break;
             //绑定微信
             case R.id.relative_mesetting_bind_wx:
-                Intent intent_wx = new Intent(this, BindActivity.class);
-                intent_wx.putExtra("bindType", "wx");
+                Intent intent_wx = new Intent(this, BindWechatActivity.class);
                 startActivity(intent_wx);
                 break;
             //绑定支付宝
             case R.id.relative_mesetting_bind_zfb:
-                Intent intent_zfb = new Intent(this, BindActivity.class);
-                intent_zfb.putExtra("bindType", "zfb");
+                Intent intent_zfb = new Intent(this, BindAlipayActivity.class);
                 startActivity(intent_zfb);
                 break;
             //退出登录

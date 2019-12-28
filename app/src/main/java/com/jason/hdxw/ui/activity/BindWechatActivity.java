@@ -56,10 +56,11 @@ import static com.jason.hdxw.api.API.MEMBER_ZFB_UPDATA;
 
 
 /**
- * 绑定微信or支付宝页面
+ * 绑定微信页面(暂停使用)
  * created by wang on 2018/11/15
  */
-public class BindActivity extends WhiteBarActivity implements View.OnClickListener {
+@Deprecated
+public class BindWechatActivity extends WhiteBarActivity implements View.OnClickListener {
 
     @BindView(R.id.iv_bind_back)
     ImageView mIvBindBack;
@@ -92,7 +93,7 @@ public class BindActivity extends WhiteBarActivity implements View.OnClickListen
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bind);
+        setContentView(R.layout.activity_bind_wechat);
         ButterKnife.bind(this);
         initData();
     }

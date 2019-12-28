@@ -106,8 +106,10 @@
         <activity android:name="com.jason.hdxw.ui.activity.RegisterAgreementActivity" />
         <!--编辑银行卡-->
         <activity android:name="com.jason.hdxw.ui.activity.BankCardEditActivity" />
-        <!--绑定微信or支付宝页面-->
-        <activity android:name="com.jason.hdxw.ui.activity.BindActivity" />
+        <!--绑定微信页面-->
+        <activity android:name="com.jason.hdxw.ui.activity.BindWechatActivity" />
+        <!--绑定支付宝页面-->
+        <activity android:name="com.jason.hdxw.ui.activity.BindAlipayActivity" />
     </application>
 
 </manifest>
