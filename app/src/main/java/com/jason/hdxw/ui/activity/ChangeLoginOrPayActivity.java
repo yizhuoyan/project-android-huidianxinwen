@@ -76,7 +76,8 @@ public class ChangeLoginOrPayActivity extends WhiteBarActivity implements View.O
     private void initView() {
         mType = getIntent().getStringExtra("type");
         if (mType.equals("login")) {
-            mTvChangeloginorpayTitle.setText(getString(R.string.changepwd_login));
+            mTvChangeloginorpayTitle.setVisibility(View.GONE);
+           // mTvChangeloginorpayTitle.setText(getString(R.string.changepwd_login));
             mEtChangeloginorpayOldpwd.setHint(getString(R.string.changepwd_login_old));
             mEtChangeloginorpayNewpwd.setHint(getString(R.string.changepwd_login_new));
             mEtChangeloginorpayNewpwd2.setHint(getString(R.string.changepwd_login_new2));
@@ -137,12 +138,7 @@ public class ChangeLoginOrPayActivity extends WhiteBarActivity implements View.O
      * 修改密码
      */
     private void changePwd() {
-        String oldPassword= Strings.trim(mEtChangeloginorpayOldpwd.getText());
 
-        if (oldPassword== null) {
-            ToastUtils.show(getString(R.string.changepwd_oldpwd));
-            return;
-        }
         String newPassword=Strings.trim(mEtChangeloginorpayNewpwd.getText());
         if (newPassword==null) {
             ToastUtils.show(getString(R.string.changepwd_newpwd));
@@ -163,7 +159,7 @@ public class ChangeLoginOrPayActivity extends WhiteBarActivity implements View.O
             }
             OkGo.<String>post(MEMBER_CHANGE_LOGIN)
                     .params("token", UserCache.getToken())
-                    .params("yuan_password",oldPassword)
+                   // .params("yuan_password",oldPassword)
                     .params("new_password", newPassword)
                     .params("zainew_password",newPasswordConfirm)
                     .params("code",otp)
@@ -194,6 +190,11 @@ public class ChangeLoginOrPayActivity extends WhiteBarActivity implements View.O
                         }
                     });
         } else {
+            String oldPassword= Strings.trim(mEtChangeloginorpayOldpwd.getText());
+            if (oldPassword== null) {
+                ToastUtils.show(getString(R.string.changepwd_oldpwd));
+                return;
+            }
             OkGo.<String>post(MEMBER_CHANGE_PAY)
                     .params("token", UserCache.getToken())
                     .params("yuan_password",oldPassword)
