@@ -18,7 +18,7 @@ android {
         config {
             keyAlias 'jason2018'
             keyPassword 'jason2018'
-            storeFile file('D:/JasonProject/jason2018.jks')
+            storeFile file('jason2018.jks')
             storePassword 'jason2018'
         }
     }
