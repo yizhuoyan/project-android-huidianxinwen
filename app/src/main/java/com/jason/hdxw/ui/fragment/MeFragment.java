@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.hjq.toast.ToastUtils;
+import com.jason.hdxw.ui.activity.WebViewActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -167,7 +168,7 @@ public class MeFragment extends UILazyFragment implements View.OnClickListener {
         return true;
     }
 
-    @OnClick({R.id.tv_me_setting, R.id.tv_me_changepwd, R.id.tv_me_idea, R.id.tv_me_about, R.id.tv_me_version, R.id.tv_me_exit,
+    @OnClick({R.id.tv_me_setting, R.id.tv_me_wallet, R.id.tv_me_changepwd, R.id.tv_me_idea, R.id.tv_me_about, R.id.tv_me_version, R.id.tv_me_exit,
             R.id.iv_me_setting, R.id.iv_me_head})
     @Override
     public void onClick(View v) {
@@ -183,6 +184,13 @@ public class MeFragment extends UILazyFragment implements View.OnClickListener {
                 Intent intent2 = new Intent(getSupportActivity(), MeSettingActivity.class);
                 intent2.putExtra("userInfo", mInfoBean);
                 startActivityForResult(intent2, 55);
+                break;
+            // 我的钱包
+            case R.id.tv_me_wallet:
+                Intent walletIntent = new Intent(getSupportActivity(), WebViewActivity.class);
+                walletIntent.putExtra("title", "我的钱包");
+                walletIntent.putExtra("url", UserCache.getWalletURL());
+                startActivity(walletIntent);
                 break;
             //修改密码
             case R.id.tv_me_changepwd:

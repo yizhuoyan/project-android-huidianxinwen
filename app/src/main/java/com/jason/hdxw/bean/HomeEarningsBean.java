@@ -15,6 +15,15 @@ public class HomeEarningsBean {
     private String status;
     private String msg;
     private MoneyBean money;
+    private String wallet_url;
+
+    public String getWalletUrl() {
+        return wallet_url;
+    }
+
+    public void setWalletUrl(String wallet_url) {
+        this.wallet_url = wallet_url;
+    }
 
     public String getStatus() {
         return status;

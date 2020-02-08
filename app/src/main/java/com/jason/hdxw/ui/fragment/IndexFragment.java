@@ -200,6 +200,9 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
                             if (mEarningsBean.getMoney().getZong() != null && mEarningsBean.getMoney().getZong().length() > 0) {
                                 mTvIndexTeamNum.setText(mEarningsBean.getMoney().getZong());
                             }
+                            if (mEarningsBean.getWalletUrl() != null && mEarningsBean.getWalletUrl().length() > 0) {
+                                UserCache.setWalletURL(mEarningsBean.getWalletUrl());
+                            }
                         } else {
                             ToastUtils.show(mEarningsBean.getMsg());
                         }

@@ -15,6 +15,25 @@ import com.orhanobut.logger.Logger;
 public class UserCache {
 
     /**
+     * 保存我的钱包连接
+     * @param url
+     */
+    public static void setWalletURL(String url){
+        url=Strings.trim(url);
+        if(url!=null) {
+            SPUtil.put(App.getApplication(), "mine_wallet", url);
+        }
+    }
+
+    /**
+     * 我的钱包网页连接
+     * @return
+     */
+    public static String getWalletURL(){
+        return (String) SPUtil.get(App.getApplication(), "mine_wallet", "");
+    }
+
+    /**
      * 保存商城跳转网页连接
      * @param url
      */
