@@ -17,3 +17,4 @@ logs
 /log
 /tmp
 hotspot.log
+*.iml
