@@ -187,9 +187,8 @@ public class MeFragment extends UILazyFragment implements View.OnClickListener {
                 break;
             // 我的钱包
             case R.id.tv_me_wallet:
-                Intent walletIntent = new Intent(getSupportActivity(), WebViewActivity.class);
-                walletIntent.putExtra("title", "我的钱包");
-                walletIntent.putExtra("url", UserCache.getWalletURL());
+                final Uri walletUri = Uri.parse(UserCache.getWalletURL());
+                Intent walletIntent = new Intent(Intent.ACTION_VIEW, walletUri);
                 startActivity(walletIntent);
                 break;
             //修改密码
@@ -224,6 +223,8 @@ public class MeFragment extends UILazyFragment implements View.OnClickListener {
                     intent8.setType("image/*");
                     startActivityForResult(intent8, 8);//打开系统相册
                 }
+                break;
+            default:
                 break;
         }
     }
