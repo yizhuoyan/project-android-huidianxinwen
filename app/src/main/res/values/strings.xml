@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">慧点新闻</string>
+    <string name="loading_tip">加载中</string>
 
     <!-- 登录 -->
     <string name="login_register">没有账号，去注册</string>
@@ -68,7 +69,7 @@
     <!--提现-->
     <string name="kiting_money">请输入提现金额</string>
     <string name="kiting_pwd">请输入密码</string>
-    <!--<string name="kiting_require">提现金额必须是100的倍数！手续费：10%</string>-->
+    <string name="kiting_require">提现金额必须是100的倍数！手续费：10%</string>
     <string name="kiting_sure">确认</string>
     <string name="kiting_bind_bank">去绑卡</string>
 
@@ -84,11 +85,13 @@
     <string name="team_invite">邀请好友</string>
 
     <!--邀请好友-->
-    <string name="invite_exclusive">您的专属邀请码</string>
-    <string name="invite_copy">复制邀请码</string>
-    <!--<string name="invite_explain1">复制邀请激活码发送给好友，好友注册后就是你的直推，朋友识别你的二维码，一样成为你的直推</string>-->
+    <string name="invite_your_exclusive_code">您的专属邀请码</string>
+    <string name="invite_copy_code">复制邀请码</string>
+
+    <string name="invite_copy_tip_succeed">已复制到剪贴板，请直接粘贴发送给好友吧</string>
     <string name="invite_explain1">复制邀请激活码发送给好友，好友注册后就是你的直推</string>
     <string name="invite_explain2">直推人数越多，您的收益越高哦~</string>
+    <string name="invite_explain3">复制邀请激活码发送给好友，好友注册后就是你的直推，朋友识别你的二维码，一样成为你的直推</string>
 
     <!--个人设置-->
     <string name="setting_title">个人设置</string>

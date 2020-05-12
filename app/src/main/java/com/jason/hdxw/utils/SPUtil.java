@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.IllegalFormatException;
 import java.util.Map;
 
 /**
@@ -71,8 +72,7 @@ public class SPUtil {
         } else if (defaultObject instanceof Long) {
             return sp.getLong(key, (Long) defaultObject);
         }
-
-        return null;
+        throw new IllegalArgumentException();
     }
 
     /**

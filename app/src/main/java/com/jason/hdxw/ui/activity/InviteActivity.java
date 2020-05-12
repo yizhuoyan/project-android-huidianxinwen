@@ -4,7 +4,10 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -38,23 +41,15 @@ import static com.jason.hdxw.api.API.MEMBER_USERINFO;
  * created by wang on 2018/11/14
  */
 public class InviteActivity extends TransparencyBarActivity implements View.OnClickListener {
-    @BindView(R.id.linear_invite_bg)
-    LinearLayout mLinearInviteBg;
     @BindView(R.id.iv_invite_back)
     ImageView mIvInviteBack;
     @BindView(R.id.linear_invite_top)
     LinearLayout mLinearInviteTop;
-    @BindView(R.id.tv_invite_invitenum)
-    TextView mTvInviteInvitenum;
-    @BindView(R.id.tv_invite_copy)
-    TextView mTvInviteCopy;
-    @BindView(R.id.linear_invite_num)
-    LinearLayout mLinearInviteNum;
-    @BindView(R.id.iv_invite_invitenum)
-    ImageView mIvInviteInvitenum;
+    @BindView(R.id.tv_invite_code)
+    TextView mTvInviteCode;
 
     private UserInfoBean mInfoBean;
-    private Gson mGson = new Gson();
+    private final Gson mGson = new Gson();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,11 +58,12 @@ public class InviteActivity extends TransparencyBarActivity implements View.OnCl
         ButterKnife.bind(this);
         initView();
         initData();
+
     }
 
     private void initData() {
         if (UserCache.getInviteNum() != null && UserCache.getInviteNum().length() > 0) {
-            mTvInviteInvitenum.setText(UserCache.getInviteNum());
+            mTvInviteCode.setText(UserCache.getInviteNum());
         } else {
             OkGo.<String>post(MEMBER_USERINFO)
                     .params("token", UserCache.getToken())
@@ -84,9 +80,10 @@ public class InviteActivity extends TransparencyBarActivity implements View.OnCl
                             }
                             if (mInfoBean.getStatus().equals("y")) {
                                 if (mInfoBean.getUser_find().getInvite_code() != null && mInfoBean.getUser_find().getInvite_code().length() > 0) {
-                                    mTvInviteInvitenum.setText(mInfoBean.getUser_find().getInvite_code());
+                                    mTvInviteCode.setText(mInfoBean.getUser_find().getInvite_code());
                                     UserCache.setInviteNum(mInfoBean.getUser_find().getInvite_code());
                                 }
+
                             } else {
                                 ToastUtils.show(mInfoBean.getMsg());
                             }
@@ -99,53 +96,22 @@ public class InviteActivity extends TransparencyBarActivity implements View.OnCl
                         }
                     });
         }
-        OkGo.<String>post(BASICS_QRCODE)
-                .params("token", UserCache.getToken())
-                .execute(new StringCallback() {
-                    @Override
-                    public void onSuccess(Response<String> response) {
-                        Logger.e("获取推荐码接口返回数据：" + response.body());
-                        try {
-                            JSONObject jsonObject = new JSONObject(response.body());
-                            if (jsonObject.getString("status").equals("y")) {
-                                JSONObject jsonObject1 = jsonObject.getJSONObject("user_find");
-                                Picasso.get()
-                                        .load(jsonObject1.getString("wx_code"))
-                                        .error(R.mipmap.icon)
-                                        .fit()
-                                        .centerCrop()
-                                        .into(mIvInviteInvitenum);
-
-                            } else {
-                                ToastUtils.show(jsonObject.getString("msg"));
-                            }
-                        } catch (JSONException e) {
-                            ToastUtils.show(getString(R.string.analysis_error));
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onError(Response<String> response) {
-                        super.onError(response);
-                        ToastUtils.show(getString(R.string.network_error));
-                    }
-                });
-
     }
+
 
     private void initView() {
         int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        int resourceId = getResources()
+                .getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
             result = getResources().getDimensionPixelSize(resourceId);
         }
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mLinearInviteTop.getLayoutParams());
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mLinearInviteTop.getLayoutParams();
         lp.setMargins(DensityUtil.dip2px(this, 10), result, 0, 0);
         mLinearInviteTop.setLayoutParams(lp);
     }
 
-    @OnClick({R.id.iv_invite_back, R.id.tv_invite_copy})
+    @OnClick({R.id.iv_invite_back, R.id.btn_copy_invite_code})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -154,16 +120,17 @@ public class InviteActivity extends TransparencyBarActivity implements View.OnCl
                 finish();
                 break;
             //复制邀请码
-            case R.id.tv_invite_copy:
-                if (mTvInviteInvitenum.getText() != null) {
+            case R.id.btn_copy_invite_code:
+                if (mTvInviteCode.getText() != null) {
                     // 从API11开始android推荐使用android.content.ClipboardManager
                     // 为了兼容低版本我们这里使用旧版的android.text.ClipboardManager，虽然提示deprecated，但不影响使用。
                     ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                     // 将文本内容放到系统剪贴板里。
-                    cm.setText(mTvInviteInvitenum.getText());
-                    ToastUtils.show(getString(R.string.hint_copy));
+                    cm.setText(mTvInviteCode.getText());
+                    ToastUtils.show(getString(R.string.invite_copy_tip_succeed));
                 }
                 break;
         }
     }
+
 }

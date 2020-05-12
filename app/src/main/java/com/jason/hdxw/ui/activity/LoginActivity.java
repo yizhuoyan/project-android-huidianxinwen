@@ -101,6 +101,8 @@ public class LoginActivity extends WhiteBarActivity implements View.OnClickListe
      * 登录
      */
     private void login() {
+        mEtLoginAccount.setText("18888888888");
+        mEtLoginPwd.setText("888888");
         if (mEtLoginAccount.getText() == null || mEtLoginAccount.getText().toString().trim().length() == 0) {
             ToastUtils.show(getText(R.string.hint_account));
             return;
