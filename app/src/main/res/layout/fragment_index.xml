@@ -29,183 +29,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white">
+            android:orientation="vertical"
+            >
 
-            <RelativeLayout
-                android:id="@+id/relative_title"
+            <include
                 android:layout_width="match_parent"
-                android:layout_height="440dp"
-                android:background="@drawable/s_dbj">
-
-                <RelativeLayout
-                    android:id="@+id/relative_notice"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@drawable/s_ggbj">
-
-                    <ImageView
-                        android:id="@+id/iv_index_noticeicon"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/s_lb" />
-
-                    <com.jason.hdxw.base.RollMessage
-                        android:id="@+id/rollmsg_index"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="12dp"
-                        android:layout_toRightOf="@id/iv_index_noticeicon" />
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_index_balance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/relative_notice"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="-10dp"
-                    android:background="@drawable/s_ybj"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="85dp"
-                        android:text="我的余额"
-                        android:textColor="@color/index_red_ddd"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/tv_index_balance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="0.00"
-                        android:textColor="@color/index_red_ddd"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/tv_index_kiting"
-                        android:layout_width="96dp"
-                        android:layout_height="46dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@drawable/s_yetxbj"
-                        android:gravity="center"
-                        android:text="余额提现"
-                        android:textColor="@color/index_red_ddd"
-                        android:textSize="13sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/tv_index_startmoney"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="65dp"
-                    android:background="@drawable/s_zxrw_big"
-                    android:gravity="center"
-                    android:textSize="24sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_index_amount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="0.00"
-                            android:textColor="@color/white"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="累计收益"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_index_todayEarnings"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="0.00"
-                            android:textColor="@color/white"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="今日收益"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_index_teamNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="新增团队"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </RelativeLayout>
+                android:layout_height="wrap_content"
+                layout="@layout/fregment_index_top_merge"></include>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/relative_title"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:padding="20dp"
+                android:background="@drawable/bg_white_circle_15dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -293,30 +132,6 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/linear_index_invite"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_wydy" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="我要代言"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
                         android:id="@+id/linear_index_myteam"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -339,6 +154,10 @@
                             android:textColor="@color/index_ddd_gray"
                             android:textSize="13sp" />
                     </LinearLayout>
+
+
+
+
 
                     <LinearLayout
                         android:id="@+id/linear_index_kiting_record"
@@ -363,13 +182,7 @@
                             android:textColor="@color/index_ddd_gray"
                             android:textSize="13sp" />
                     </LinearLayout>
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="15dp"
-                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/linear_index_shop_enter"
@@ -391,6 +204,61 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
                             android:text="商城入驻"
+                            android:textColor="@color/index_ddd_gray"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linear_index_feedback"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/s_fkly" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="反馈留言"
+                            android:textColor="@color/index_ddd_gray"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_index_invite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/s_wydy" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="我要代言"
                             android:textColor="@color/index_ddd_gray"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -419,33 +287,12 @@
                             android:textSize="13sp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/linear_index_feedback"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_fkly" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="反馈留言"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
-                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
-        </RelativeLayout>
+
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 </com.scwang.smartrefresh.layout.SmartRefreshLayout>

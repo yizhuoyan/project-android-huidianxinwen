@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -60,6 +61,10 @@ import static com.jason.hdxw.api.API.MEMBER_EXAMINE_MONEY;
  * created by wang on 2018/11/29
  */
 public class IndexFragment extends UILazyFragment implements View.OnClickListener {
+
+    @BindView(R.id.btn_main_eye)
+    ImageButton mBtnEye;
+
     @BindView(R.id.iv_index_noticeicon)
     ImageView mIvIndexNoticeicon;
     @BindView(R.id.rollmsg_index)
@@ -68,18 +73,14 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
     RelativeLayout mRelativeNotice;
     @BindView(R.id.tv_index_balance)
     TextView mTvIndexBalance;
-    @BindView(R.id.tv_index_kiting)
+    @BindView(R.id.btn_index_kiting)
     TextView mTvIndexKiting;
-    @BindView(R.id.linear_index_balance)
-    LinearLayout mLinearIndexBalance;
-    @BindView(R.id.tv_index_startmoney)
-    TextView mTvIndexStartmoney;
-    @BindView(R.id.tv_index_amount)
-    TextView mTvIndexAmount;
-    @BindView(R.id.tv_index_todayEarnings)
-    TextView mTvIndexTodayEarnings;
-    @BindView(R.id.relative_title)
-    RelativeLayout mRelativeTitle;
+
+    @BindView(R.id.tv_main_total_income)
+    TextView mTvMainTotalIncome;
+    @BindView(R.id.tv_main_today_income)
+    TextView mTvMainTodayIncome;
+
     @BindView(R.id.linear_index_incomedetails)
     LinearLayout mLinearIndexIncomedetails;
     @BindView(R.id.linear_index_kiting)
@@ -128,7 +129,8 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
         if (resourceId > 0) {
             result = getSupportActivity().getResources().getDimensionPixelSize(resourceId);
         }
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mRelativeNotice.getLayoutParams());
+
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mRelativeNotice.getLayoutParams();
         lp.setMargins(DensityUtil.dip2px(getSupportActivity(), 15), result + DensityUtil.dip2px(getSupportActivity(), 10), DensityUtil.dip2px(getSupportActivity(), 15), 0);
         mRelativeNotice.setLayoutParams(lp);
     }
@@ -187,10 +189,10 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
                         }
                         if (mEarningsBean.getStatus().equals("y")) {
                             if (mEarningsBean.getMoney().getJin_day() != null && mEarningsBean.getMoney().getJin_day().length() > 0) {
-                                mTvIndexTodayEarnings.setText(mEarningsBean.getMoney().getJin_day());
+                                mTvMainTodayIncome.setText(mEarningsBean.getMoney().getJin_day());
                             }
                             if (mEarningsBean.getMoney().getZong_money() != null && mEarningsBean.getMoney().getZong_money().length() > 0) {
-                                mTvIndexAmount.setText(mEarningsBean.getMoney().getZong_money());
+                                mTvMainTotalIncome.setText(mEarningsBean.getMoney().getZong_money());
                             }
                             if (mEarningsBean.getMoney().getUser_money() != null && mEarningsBean.getMoney().getUser_money().length() > 0) {
                                 mTvIndexBalance.setText(mEarningsBean.getMoney().getUser_money());
@@ -294,8 +296,8 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
                 });
     }
 
-    @OnClick({R.id.relative_notice, R.id.tv_index_kiting, R.id.linear_index_incomedetails, R.id.linear_index_myteam,
-            R.id.linear_index_novice, R.id.linear_index_shop_enter, R.id.tv_index_startmoney, R.id.linear_index_shop,
+    @OnClick({R.id.btn_main_eye,R.id.relative_notice, R.id.btn_index_kiting, R.id.linear_index_incomedetails, R.id.linear_index_myteam,
+            R.id.linear_index_novice, R.id.linear_index_shop_enter, R.id.btn_main_do_task, R.id.linear_index_shop,
             R.id.linear_index_feedback, R.id.linear_index_kiting_record, R.id.linear_index_invite, R.id.linear_index_kiting})
     @Override
     public void onClick(View v) {
@@ -306,16 +308,20 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
                 intent.putExtra("noticeList", mNoticeListBean);
                 startActivity(intent);
                 break;
+            //显示/隐藏余额收益
+            case R.id.btn_main_eye:
+                toggleBalanceVisible();
+                break;
             //提现
-            case R.id.tv_index_kiting:
+            case R.id.btn_index_kiting:
                 startActivity(KitingActivity.class);
                 break;
             //我要提现
             case R.id.linear_index_kiting:
                 startActivity(KitingActivity.class);
                 break;
-            //开始赚钱
-            case R.id.tv_index_startmoney:
+            //执行任务
+            case R.id.btn_main_do_task:
                 examineMoney();
                 break;
             //收益明细
@@ -363,6 +369,31 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
         }
     }
 
+    public void toggleBalanceVisible(){
+        if(mTvIndexBalance.getHint()==null){
+            mTvMainTotalIncome.setHint(mTvMainTotalIncome.getText());
+            mTvIndexBalance.setHint(mTvIndexBalance.getText());
+            mTvMainTodayIncome.setHint(mTvMainTodayIncome.getText());
+            mTvIndexTeamNum.setHint(mTvIndexTeamNum.getText());
+
+        }
+        if(mBtnEye.isActivated()){
+            mBtnEye.setBackgroundResource(R.drawable.ic_eye_open);
+            mTvIndexBalance.setText(mTvIndexBalance.getHint());
+            mTvMainTotalIncome.setText(mTvMainTotalIncome.getHint());
+            mTvMainTodayIncome.setText(mTvMainTodayIncome.getHint());
+            mTvIndexTeamNum.setText(mTvIndexTeamNum.getHint());
+            mBtnEye.setActivated(false);
+        }else{
+            mTvIndexBalance.setText("******");
+            mTvMainTotalIncome.setText("******");
+            mTvMainTodayIncome.setText("******");
+            mTvIndexTeamNum.setText("***");
+            mBtnEye.setActivated(true);
+            mBtnEye.setBackgroundResource(R.drawable.ic_eye_close);
+        }
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO: inflate a fragment view

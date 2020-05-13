@@ -56,7 +56,8 @@
     <string name="changepwd_otp_hint">请输入收到的验证码</string>
     <string name="changepwd_otp_btn_txt">点击发送验证码</string>
 
-
+    <!-- 主页 -->
+    <string name="main_do_task">执行任务</string>
     <!--<string name="changepwd_hint">发送验证码短信到</string>-->
     <string name="changepwd_hint2">已发送验证码短信到</string>
 
