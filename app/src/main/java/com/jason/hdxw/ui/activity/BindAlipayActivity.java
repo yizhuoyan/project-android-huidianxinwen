@@ -19,6 +19,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -59,18 +60,14 @@ public class BindAlipayActivity extends WhiteBarActivity implements View.OnClick
 
     @BindView(R.id.iv_bind_back)
     ImageView mIvBindBack;
-    @BindView(R.id.tv_bind_title)
-    TextView mTvBindTitle;
     @BindView(R.id.et_bind_num)
     ClearEditText mEtBindNum;
     @BindView(R.id.iv_bind_show)
     ImageView mIvBindShow;
     @BindView(R.id.iv_bind_add)
-    ImageView mIvBindAdd;
-    @BindView(R.id.tv_bind_hint)
-    TextView mTvBindHint;
+    ImageButton mIvBindAdd;
     @BindView(R.id.tv_bind_sure)
-    TextView mTvBindSure;
+    Button mTvBindSure;
     @BindView(R.id.et_bind_name)
     ClearEditText mEtBindName;
     @BindView(R.id.et_otp)

@@ -102,11 +102,23 @@
     <string name="setting_bankcard">银行卡管理</string>
     <string name="setting_bind_wx">绑定微信</string>
     <string name="setting_bind_zfb">绑定支付宝</string>
+
+    <!--绑定支付宝-->
+    <string name="bind_zfb_label_account">支付宝账号</string>
+    <string name="bind_zfb_input_hint_account">请输入支付宝账号</string>
+    <string name="bind_zfb_label_name">收款人姓名</string>
+    <string name="bind_zfb_input_hint_name">请输入收款人姓名</string>
+    <string name="bind_zfb_label_captcha">验证码</string>
+    <string name="bind_zfb_input_hint_captcha">请输入收到的验证码</string>
+    <string name="bind_zfb_text_send_captcha">发送验证码</string>
+    <string name="bind_zfb_label_upload_receive_qrcode">支付宝收款码上传</string>
+    <string name="bind_text_confirm_bind">确认绑定</string>
+
+
+
     <string name="setting_input_wx">请输入微信账号</string>
-    <string name="setting_input_zfb">请输入支付宝账号</string>
     <string name="setting_input_name">请输入收款人姓名</string>
     <string name="setting_hint_wx">注: 请上传微信收款码</string>
-    <string name="setting_hint_zfb">注: 请上传支付宝收款码</string>
     <string name="setting_exit">退出登录</string>
 
     <!--银行卡管理-->

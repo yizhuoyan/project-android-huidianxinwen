@@ -29,4 +29,10 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:padding">12dp</item>
     </style>
+    <style name="FormVerticalLabelStyle">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
 </resources>

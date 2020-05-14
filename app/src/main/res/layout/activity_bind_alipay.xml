@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/partition_gray"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -16,7 +16,6 @@
             android:src="@drawable/i_back_black" />
 
         <TextView
-            android:id="@+id/tv_bind_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -34,96 +33,114 @@
         android:background="@color/white"
         android:orientation="vertical">
 
+        <TextView
+            style="@style/FormVerticalLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bind_zfb_label_account" />
+
         <com.jason.hdxw.base.ClearEditText
             android:id="@+id/et_bind_num"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/setting_input_zfb"
+            android:hint="@string/bind_zfb_input_hint_account"
             android:maxLines="1"
             android:paddingLeft="14dp" />
 
         <include layout="@layout/segmentation_gray" />
+
+        <TextView
+            style="@style/FormVerticalLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bind_zfb_label_name" />
 
         <com.jason.hdxw.base.ClearEditText
             android:id="@+id/et_bind_name"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/setting_input_name"
+            android:hint="@string/bind_zfb_input_hint_name"
             android:maxLines="1"
             android:paddingLeft="14dp" />
+
         <include layout="@layout/segmentation_gray" />
+
+        <TextView
+            style="@style/FormVerticalLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bind_zfb_label_captcha" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:paddingLeft="14dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="14dp">
+
             <EditText
                 android:id="@+id/et_otp"
                 style="@style/EditTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:inputType="text"
-                android:hint="@string/changepwd_otp_hint"
-                />
+                android:hint="@string/bind_zfb_input_hint_captcha"
+                android:inputType="text" />
 
 
             <Button
                 android:id="@+id/btn_otp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/changepwd_otp_btn_txt"
-                />
+                android:background="@android:color/transparent"
+                android:text="@string/bind_zfb_text_send_captcha"
+                android:textColor="@color/blue" />
 
         </LinearLayout>
 
+        <include layout="@layout/segmentation_gray" />
+
+        <TextView
+            style="@style/FormVerticalLabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bind_zfb_label_upload_receive_qrcode" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/iv_bind_show"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/gray" />
+
+            <ImageButton
+                android:id="@+id/iv_bind_add"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/ico_upload_photo" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/tv_bind_sure"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_blue_circle_10dp"
+            android:gravity="center"
+            android:text="@string/bind_text_confirm_bind"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="15dp">
 
-        <ImageView
-            android:id="@+id/iv_bind_show"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/gray" />
-
-        <ImageView
-            android:id="@+id/iv_bind_add"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="15dp"
-            android:src="@drawable/add2" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_bind_hint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/setting_hint_zfb"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/tv_bind_sure"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/bg_blue_circle_5dp"
-        android:gravity="center"
-        android:text="确认绑定"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
 </LinearLayout>

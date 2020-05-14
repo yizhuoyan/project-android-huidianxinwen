@@ -99,17 +99,10 @@ public class BindWechatActivity extends WhiteBarActivity implements View.OnClick
     }
 
     private void initData() {
-        if (getIntent().getStringExtra("bindType").equals("wx")) {
             mTvBindTitle.setText(getString(R.string.setting_bind_wx));
             mEtBindNum.setHint(getString(R.string.setting_input_wx));
             mTvBindHint.setText(getString(R.string.setting_hint_wx));
             containerOtp.setVisibility(View.GONE);
-        } else {
-            mTvBindTitle.setText(getString(R.string.setting_bind_zfb));
-            mEtBindNum.setHint(getString(R.string.setting_input_zfb));
-            mTvBindHint.setText(getString(R.string.setting_hint_zfb));
-            containerOtp.setVisibility(View.VISIBLE);
-        }
         getBindMsg(getIntent().getStringExtra("bindType"));
     }
 
