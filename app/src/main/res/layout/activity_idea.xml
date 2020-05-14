@@ -30,9 +30,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:background="@drawable/bg_white_circle_5dp">
 
         <com.jason.hdxw.base.ClearEditText
@@ -64,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="26dp"
         android:background="@drawable/bg_blue_circle_5dp"
@@ -76,6 +75,7 @@
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshlayout_idea"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent">
 
         <com.scwang.smartrefresh.layout.header.ClassicsHeader
@@ -120,5 +120,4 @@
             app:srlPrimaryColor="@color/black"
             app:srlTextSizeTitle="15sp" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
 </LinearLayout>

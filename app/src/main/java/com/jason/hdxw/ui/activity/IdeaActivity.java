@@ -71,7 +71,7 @@ public class IdeaActivity extends WhiteBarActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idea);
         ButterKnife.bind(this);
-        initData();
+        //initData();
         initListener();
     }
 

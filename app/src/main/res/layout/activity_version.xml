@@ -35,7 +35,7 @@
         android:layout_height="130dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="56dp"
-        android:src="@mipmap/icon_circle" />
+        android:src="@drawable/logo_with_inverted" />
 
     <RelativeLayout
         android:layout_width="match_parent"
