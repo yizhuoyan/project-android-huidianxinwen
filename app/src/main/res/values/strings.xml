@@ -75,7 +75,7 @@
     <string name="kiting_bind_bank">去绑卡</string>
 
     <!--收益明细-->
-    <string name="earnings_addup">累计收益</string>
+    <string name="earnings_addup">累计收入(元)</string>
 
     <!--我的团队-->
     <string name="team_name">我的团队</string>
@@ -147,7 +147,7 @@
     <string name="network_error">网络繁忙,请稍后重试!</string>
     <string name="analysis_error">解析数据失败</string>
     <!--<string name="transition_error">数据转换异常</string>-->
-    <string name="index_today">今日\t</string>
+    <string name="index_today">今日：</string>
     <string name="index_balance">我的余额：</string>
 
     <string name="hint_exit">再按一次退出程序</string>

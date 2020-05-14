@@ -38,12 +38,13 @@
     <color name="index_ddd_gray">#FF666666</color>
     <color name="index_noselect_ddd">#FF8F8F8F</color>
     <!--收益明细 累计收益字体颜色-->
-    <color name="earnings_txt">#A8D9FA</color>
+    <color name="earnings_txt">#FFFFFFFF</color>
+    <color name="earnings_partition_gray">#FFf4f6fb</color>
     <!--意见反馈 灰色-->
     <color name="idea_gray">#FF888888</color>
 
     <!-- 灰色 -->
-    <color name="gray">#FFFFFF</color>
+    <color name="gray">#EEEEEEEE</color>
     <!--个人中心背景色-->
     <color name="me_bg_gray">#F1F4F7</color>
     <!--分割线 灰色-->

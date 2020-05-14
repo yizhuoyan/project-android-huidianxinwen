@@ -6,61 +6,60 @@
     android:background="@color/white"
     android:orientation="vertical">
 
+    <FrameLayout
+        android:id="@+id/relative_earnings_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="收益明细"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/iv_earningsdetails_back"
+            style="@style/BackStyle"
+            android:src="@drawable/i_back_black" />
+    </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:background="@drawable/ico_bg"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_earning_detail_top"
         android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/relative_earnings_title"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-
-            <ImageView
-                android:id="@+id/iv_earningsdetails_back"
-                style="@style/BackStyle"
-                android:src="@drawable/i_back_white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="收益明细"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
             android:text="@string/earnings_addup"
             android:textColor="@color/earnings_txt"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_earningsdetails_amount"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/white"
+            android:text="@string/loading_tip"
             android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tv_earningsdetails_today"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="25dp"
             android:textColor="@color/earnings_txt"
+            android:text="@string/loading_tip"
             android:textSize="12sp" />
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/earnings_partition_gray"
+        />
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_earningsdetails"
         android:layout_width="match_parent"

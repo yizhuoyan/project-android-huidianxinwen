@@ -6,6 +6,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -44,7 +46,7 @@ public class EarningsDetailsActivity extends TransparencyBarActivity implements 
     @BindView(R.id.iv_earningsdetails_back)
     ImageView mIvEarningsdetailsBack;
     @BindView(R.id.relative_earnings_title)
-    RelativeLayout mRelativeEarningsTitle;
+    View mRelativeEarningsTitle;
     @BindView(R.id.tab_earningsdetails)
     TabLayout mTabEarningsdetails;
     @BindView(R.id.recycler_earningsdetails)
@@ -206,9 +208,12 @@ public class EarningsDetailsActivity extends TransparencyBarActivity implements 
         if (resourceId > 0) {
             result = getResources().getDimensionPixelSize(resourceId);
         }
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(mRelativeEarningsTitle.getLayoutParams());
+
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mRelativeEarningsTitle.getLayoutParams();
+        //System.out.println(lp.getClass());
         lp.setMargins(0, result, 0, 0);
         mRelativeEarningsTitle.setLayoutParams(lp);
+
 //        mTabEarningsdetails.addTab(mTabEarningsdetails.newTab().setText("全部"));
         mTabEarningsdetails.addTab(mTabEarningsdetails.newTab().setText("浏览收益"));
         mTabEarningsdetails.addTab(mTabEarningsdetails.newTab().setText("广告分润"));
