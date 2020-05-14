@@ -100,15 +100,7 @@ public class InviteActivity extends TransparencyBarActivity implements View.OnCl
 
 
     private void initView() {
-        int result = 0;
-        int resourceId = getResources()
-                .getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
-        }
-        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mLinearInviteTop.getLayoutParams();
-        lp.setMargins(DensityUtil.dip2px(this, 10), result, 0, 0);
-        mLinearInviteTop.setLayoutParams(lp);
+        marginTopStatusBarHeightForView(mLinearInviteTop);
     }
 
     @OnClick({R.id.iv_invite_back, R.id.btn_copy_invite_code})

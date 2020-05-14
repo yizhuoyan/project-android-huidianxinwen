@@ -69,8 +69,8 @@
 
     <!--提现-->
     <string name="kiting_money">请输入提现金额</string>
-    <string name="kiting_pwd">请输入密码</string>
-    <string name="kiting_require">提现金额必须是100的倍数！手续费：10%</string>
+    <string name="kiting_pwd">请输入提现密码</string>
+    <string name="kiting_require">注：提现金额必须是100的倍数！</string>
     <string name="kiting_sure">确认</string>
     <string name="kiting_bind_bank">去绑卡</string>
 

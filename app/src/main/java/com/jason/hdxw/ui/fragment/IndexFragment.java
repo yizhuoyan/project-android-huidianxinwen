@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.jason.hdxw.R;
 import com.jason.hdxw.base.RollMessage;
+import com.jason.hdxw.base.TransparencyBarActivity;
 import com.jason.hdxw.base.UILazyFragment;
 import com.jason.hdxw.bean.HomeEarningsBean;
 import com.jason.hdxw.bean.NoticeListBean;
@@ -124,15 +125,7 @@ public class IndexFragment extends UILazyFragment implements View.OnClickListene
 
     @Override
     protected void initView() {
-        int result = 0;
-        int resourceId = getSupportActivity().getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getSupportActivity().getResources().getDimensionPixelSize(resourceId);
-        }
-
-        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mRelativeNotice.getLayoutParams();
-        lp.setMargins(DensityUtil.dip2px(getSupportActivity(), 15), result + DensityUtil.dip2px(getSupportActivity(), 10), DensityUtil.dip2px(getSupportActivity(), 15), 0);
-        mRelativeNotice.setLayoutParams(lp);
+        TransparencyBarActivity.marginTopStatusBarHeightForView(mRelativeNotice);
     }
 
     @Override

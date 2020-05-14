@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.hjq.toast.ToastUtils;
+import com.jason.hdxw.base.TransparencyBarActivity;
 import com.jason.hdxw.ui.activity.WebViewActivity;
 import com.jason.hdxw.utils.DensityUtil;
 import com.lzy.okgo.OkGo;
@@ -101,15 +102,7 @@ public class MeFragment extends UILazyFragment implements View.OnClickListener {
 
     @Override
     protected void initView() {
-        int result = 0;
-        int resourceId = getSupportActivity().getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getSupportActivity().getResources().getDimensionPixelSize(resourceId);
-        }
-
-        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mHeaderView.getLayoutParams();
-        lp.setMargins(DensityUtil.dip2px(getSupportActivity(), 15), result + DensityUtil.dip2px(getSupportActivity(), 10), DensityUtil.dip2px(getSupportActivity(), 15), 0);
-        mHeaderView.setLayoutParams(lp);
+        TransparencyBarActivity.marginTopStatusBarHeightForView(mHeaderView);
     }
 
     @Override

@@ -203,16 +203,8 @@ public class EarningsDetailsActivity extends TransparencyBarActivity implements 
     }
 
     private void inivView() {
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
-        }
+        TransparencyBarActivity.marginTopStatusBarHeightForView(mRelativeEarningsTitle);
 
-        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mRelativeEarningsTitle.getLayoutParams();
-        //System.out.println(lp.getClass());
-        lp.setMargins(0, result, 0, 0);
-        mRelativeEarningsTitle.setLayoutParams(lp);
 
 //        mTabEarningsdetails.addTab(mTabEarningsdetails.newTab().setText("全部"));
         mTabEarningsdetails.addTab(mTabEarningsdetails.newTab().setText("浏览收益"));

@@ -3,6 +3,8 @@ package com.jason.hdxw.base;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
 import com.gyf.barlibrary.ImmersionBar;
@@ -39,6 +41,17 @@ public class TransparencyBarActivity extends BaseActivity implements ViewTreeObs
         return mImmersionBar;
     }
 
+    public static void marginTopStatusBarHeightForView(View view){
+        int result = 0;
+        int resourceId = view.getContext().getResources()
+                .getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = view.getContext().getResources().getDimensionPixelSize(resourceId);
+            ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            //append margin-top
+            lp.setMargins(lp.leftMargin, lp.topMargin+result, lp.rightMargin, lp.bottomMargin);
+        }
+    }
     @Override
     public void onGlobalLayout() {
 

@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
-                android:text="我要赚钱"
+                android:text="赚钱"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
-                android:text="个人中心"
+                android:text="我的"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </LinearLayout>

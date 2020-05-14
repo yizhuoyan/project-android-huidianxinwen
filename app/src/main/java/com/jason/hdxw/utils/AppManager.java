@@ -2,6 +2,8 @@ package com.jason.hdxw.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.Stack;
 
@@ -101,4 +103,6 @@ public class AppManager {
         } catch (Exception e) {
         }
     }
+
+
 }

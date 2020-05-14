@@ -112,6 +112,8 @@
         <activity android:name="com.jason.hdxw.ui.activity.BindAlipayActivity" />
         <!--公共web页 -->
         <activity android:name="com.jason.hdxw.ui.activity.WebViewActivity" />
+
     </application>
+
 
 </manifest>

@@ -224,14 +224,7 @@ public class MyTeamActivity extends TransparencyBarActivity implements View.OnCl
     }
 
     private void inivView() {
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
-        }
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(mRelativeMyteamTitle.getLayoutParams());
-        lp.setMargins(0, result, 0, 0);
-        mRelativeMyteamTitle.setLayoutParams(lp);
+        TransparencyBarActivity.marginTopStatusBarHeightForView(mRelativeMyteamTitle);
         mTabMyteam.addTab(mTabMyteam.newTab().setText("一级会员"));
         mTabMyteam.addTab(mTabMyteam.newTab().setText("二级会员"));
         mTabMyteam.addTab(mTabMyteam.newTab().setText("三级会员"));

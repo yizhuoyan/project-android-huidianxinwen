@@ -36,26 +36,23 @@
             android:textSize="14sp" />
     </RelativeLayout>
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_kiting_time"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:background="@color/me_bg_gray"
-        android:gravity="center_vertical">
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/loading_tip"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ico_notice"
+        android:drawableTint="@color/black"
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="16dp"
-            android:src="@drawable/ico_zhu" />
-
-        <TextView
-            android:id="@+id/tv_kiting_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
-    </LinearLayout>
+        android:textSize="12sp" />
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -65,179 +62,128 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+
             android:paddingBottom="50dp">
 
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="25dp"
+              android:orientation="vertical"
+              android:layout_marginLeft="8dp"
+              android:layout_marginRight="8dp"
+              android:background="@drawable/bg_blue_circle_img"
+              >
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="38dp"
-                android:src="@drawable/ico_balance" />
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="我的余额(元)"
+                  android:textColor="@color/white"
+                  android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tv_kiting_balance"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:text="0.00"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="36sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="6dp"
-                android:text="我的余额"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+          </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp">
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:orientation="vertical"
+                >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="提现类型"
+                style="@style/FormVerticalLabelStyleNoPadding"
+                 />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
-                    android:text="提现类型"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <RelativeLayout
-                    android:id="@+id/relative_kiting_bindcard"
+                    android:id="@+id/tv_kiting_banknum"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="120dp">
-
-                    <TextView
-                        android:id="@+id/tv_kiting_banknum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:textColor="@color/kiting_cardnum"
-                        android:textSize="15sp" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/i_moreright" />
-                </RelativeLayout>
-
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/kiting_cardnum"
+                    android:textSize="15sp"
+                    android:text="银行卡"
+                    android:drawableRight="@drawable/i_moreright"
+                    />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:background="@color/partition_gray" />
 
-            </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
                     android:text="提现金额"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    style="@style/FormVerticalLabelStyleNoPadding" />
 
                 <com.jason.hdxw.base.ClearEditText
                     android:id="@+id/et_kiting_money"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="120dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_height="50dp"
                     android:hint="@string/kiting_money"
                     android:inputType="number"
                     android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
-                <!--<ImageView-->
-                <!--android:layout_width="24dp"-->
-                <!--android:layout_height="24dp"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:layout_marginRight="10dp"-->
-                <!--android:src="@drawable/i_moreright" />-->
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:background="@color/partition_gray" />
 
-            </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
                     android:text="提现密码"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    style="@style/FormVerticalLabelStyleNoPadding"
+                     />
 
                 <com.jason.hdxw.base.ClearEditText
                     android:id="@+id/et_kiting_pwd"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="120dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_height="50dp"
                     android:hint="@string/kiting_pwd"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
-                <!--<ImageView-->
-                <!--android:layout_width="24dp"-->
-                <!--android:layout_height="24dp"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:layout_marginRight="10dp"-->
-                <!--android:src="@drawable/i_moreright" />-->
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
                     android:background="@color/partition_gray" />
 
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_kiting_explain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/kiting_require"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_kiting_explain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="18dp"
-                android:textColor="@color/kiting_require"
-                android:textSize="15sp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btn_kiting_sure"
@@ -250,6 +196,7 @@
                 android:text="@string/kiting_sure"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

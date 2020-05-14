@@ -55,8 +55,6 @@ public class KitingActivity extends BaseActivity implements View.OnClickListener
     ClearEditText mEtKitingMoney;
     @BindView(R.id.et_kiting_pwd)
     ClearEditText mEtKitingPwd;
-    @BindView(R.id.relative_kiting_bindcard)
-    RelativeLayout mRelativeKitingBindcard;
     @BindView(R.id.btn_kiting_sure)
     Button mBtnKitingSure;
     @BindView(R.id.tv_kiting_explain)
@@ -196,7 +194,7 @@ public class KitingActivity extends BaseActivity implements View.OnClickListener
                 });
     }
 
-    @OnClick({R.id.iv_kiting_back, R.id.tv_kiting_detail, R.id.relative_kiting_bindcard, R.id.btn_kiting_sure})
+    @OnClick({R.id.iv_kiting_back, R.id.tv_kiting_detail, R.id.tv_kiting_banknum, R.id.btn_kiting_sure})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -208,8 +206,8 @@ public class KitingActivity extends BaseActivity implements View.OnClickListener
             case R.id.tv_kiting_detail:
                 startActivity(KitingDetailsActivity.class);
                 break;
-            //选择提现方式
-            case R.id.relative_kiting_bindcard:
+            //选择提现类型
+            case R.id.tv_kiting_banknum:
                 if (kitingType != -1) {
                     dialogChoice();
                 } else {
@@ -232,7 +230,7 @@ public class KitingActivity extends BaseActivity implements View.OnClickListener
      */
     private void dialogChoice() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this, 3);
-        builder.setTitle("选择提现方式");
+        builder.setTitle("选择提现类型");
         builder.setSingleChoiceItems(selectItems, kitingType,
                 new DialogInterface.OnClickListener() {
                     @Override
