@@ -35,4 +35,8 @@
         <item name="android:textSize">15sp</item>
         <item name="android:layout_marginTop">10dp</item>
     </style>
+
+    <style name="FormVerticalLabelStyleNoPadding" parent="FormVerticalLabelStyle">
+        <item name="android:paddingLeft">0dp</item>
+    </style>
 </resources>

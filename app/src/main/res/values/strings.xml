@@ -131,6 +131,10 @@
 
     <!--添加银行卡-->
     <string name="bankcard_add_title">添加银行卡</string>
+    <string name="bankcard_add_label_card_no">银行卡的卡号</string>
+    <string name="bankcard_add_label_opening_bank">银行卡的开户行</string>
+    <string name="bankcard_add_label_name">持卡人姓名</string>
+
     <string name="bankcard_add_input1">请输入银行卡的卡号</string>
     <string name="bankcard_add_input2">请输入银行卡的开户行</string>
     <string name="bankcard_add_input3">请输入持卡人姓名</string>

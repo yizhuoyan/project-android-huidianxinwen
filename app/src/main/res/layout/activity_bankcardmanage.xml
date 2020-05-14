@@ -127,19 +127,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:background="@color/partition_gray" />
+        android:visibility="visible">
 
         <ImageView
             android:layout_width="116dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="48dp"
-            android:src="@drawable/ico_bankcard" />
+            android:src="@drawable/ico_bankcard2" />
 
         <TextView
             android:layout_width="wrap_content"

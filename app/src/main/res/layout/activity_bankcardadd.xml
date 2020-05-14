@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/partition_gray"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -29,10 +29,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@color/white"
+        android:padding="14dp"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bankcard_add_label_card_no"
+            style="@style/FormVerticalLabelStyleNoPadding"
+            />
         <com.jason.hdxw.base.ClearEditText
             android:id="@+id/et_bancardadd_cardnum"
             style="@style/EditTextStyle"
@@ -41,10 +46,15 @@
             android:hint="@string/bankcard_add_input1"
             android:inputType="number"
             android:maxLines="1"
-            android:paddingLeft="14dp" />
+             />
 
         <include layout="@layout/segmentation_gray" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bankcard_add_label_opening_bank"
+            style="@style/FormVerticalLabelStyleNoPadding"
+            />
         <com.jason.hdxw.base.ClearEditText
             android:id="@+id/et_bancardadd_cardtype"
             style="@style/EditTextStyle"
@@ -52,10 +62,15 @@
             android:layout_height="50dp"
             android:hint="@string/bankcard_add_input2"
             android:maxLines="1"
-            android:paddingLeft="14dp" />
+            />
 
         <include layout="@layout/segmentation_gray" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bankcard_add_label_name"
+            style="@style/FormVerticalLabelStyleNoPadding"
+            />
         <com.jason.hdxw.base.ClearEditText
             android:id="@+id/et_bancardadd_cardname"
             style="@style/EditTextStyle"
@@ -63,7 +78,8 @@
             android:layout_height="50dp"
             android:hint="@string/bankcard_add_input3"
             android:maxLines="1"
-            android:paddingLeft="14dp" />
+             />
+        <include layout="@layout/segmentation_gray" />
     </LinearLayout>
 
     <TextView
