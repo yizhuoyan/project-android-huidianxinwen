@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.hjq.toast.ToastUtils;
 import com.jason.hdxw.ui.activity.WebViewActivity;
+import com.jason.hdxw.utils.DensityUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -60,6 +61,8 @@ import static com.jason.hdxw.api.API.MEMBER_USERINFO;
  * created by wang on 2018/11/10
  */
 public class MeFragment extends UILazyFragment implements View.OnClickListener {
+    @BindView(R.id.me_header_layout)
+    View mHeaderView;
     @BindView(R.id.iv_me_head)
     CircleImageView mIvMeHead;
     @BindView(R.id.tv_me_name)
@@ -98,7 +101,15 @@ public class MeFragment extends UILazyFragment implements View.OnClickListener {
 
     @Override
     protected void initView() {
+        int result = 0;
+        int resourceId = getSupportActivity().getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getSupportActivity().getResources().getDimensionPixelSize(resourceId);
+        }
 
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) mHeaderView.getLayoutParams();
+        lp.setMargins(DensityUtil.dip2px(getSupportActivity(), 15), result + DensityUtil.dip2px(getSupportActivity(), 10), DensityUtil.dip2px(getSupportActivity(), 15), 0);
+        mHeaderView.setLayoutParams(lp);
     }
 
     @Override
@@ -411,6 +422,7 @@ public class MeFragment extends UILazyFragment implements View.OnClickListener {
         // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         unbinder = ButterKnife.bind(this, rootView);
+
         return rootView;
     }
 
