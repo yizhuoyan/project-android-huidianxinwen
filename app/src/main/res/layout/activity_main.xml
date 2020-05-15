@@ -33,7 +33,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_homesel" />
+                android:src="@drawable/ico_home_normal" />
 
             <TextView
                 android:id="@+id/tv_main_index"
@@ -58,7 +58,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/s_ggsx" />
+                android:src="@drawable/ico_ancient_coin_normal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_mineselnot" />
+                android:src="@drawable/ico_smile_face_normal" />
 
             <TextView
                 android:id="@+id/tv_main_me"

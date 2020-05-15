@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/refreshlayout_index"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <com.scwang.smartrefresh.layout.header.ClassicsHeader
@@ -33,23 +34,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="@drawable/bg_main"
             >
 
             <include
+                layout="@layout/fregment_index_top_merge"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                layout="@layout/fregment_index_top_merge"></include>
+                android:layout_height="wrap_content"></include>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:padding="20dp"
-                android:background="@drawable/bg_white_circle_15dp"
+                android:background="@drawable/bg_white_top_circle_15dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -57,23 +60,13 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
                         android:orientation="vertical">
-
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_zxrw" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_earning_detail" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="资金明细"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_earning_detail" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -81,23 +74,14 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
+                        android:gravity="center_horizontal"
                         android:orientation="vertical">
-
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_wytx" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_kiting_money" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="我要提现"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_kiting_money" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -109,25 +93,17 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_zqgl" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_earn_tip" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="赚钱攻略"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_earn_tip" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:orientation="horizontal">
 
@@ -140,19 +116,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_wdtd" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_my_team" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="我的团队"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_my_team" />
                     </LinearLayout>
 
 
@@ -168,19 +136,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_txjl" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_kiting_detail" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="提现记录"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_kiting_detail" />
                     </LinearLayout>
 
 
@@ -193,25 +153,17 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_scrz" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_shop_enter" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="商城入驻"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_shop_enter" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:orientation="horizontal">
 
@@ -224,19 +176,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_fkly" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_feedback" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="反馈留言"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_feedback" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -248,19 +192,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_wydy" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_invite_friends" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="我要代言"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_invite_friends" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -272,19 +208,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@drawable/s_sc" />
-
+                            style="@style/IndexMenuIconStyle"
+                            android:src="@drawable/ico_shop" />
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"
-                            android:text="商城"
-                            android:textColor="@color/index_ddd_gray"
-                            android:textSize="13sp" />
+                            style="@style/IndexMenuTextStyle"
+                            android:text="@string/index_menu_shopping_mall" />
                     </LinearLayout>
 
 

@@ -39,4 +39,18 @@
     <style name="FormVerticalLabelStyleNoPadding" parent="FormVerticalLabelStyle">
         <item name="android:paddingLeft">0dp</item>
     </style>
+
+    <style name="IndexMenuIconStyle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="IndexMenuTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/index_ddd_gray</item>
+    </style>
 </resources>

@@ -243,10 +243,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             //首页
             case R.id.linear_main_index:
                 mNoVpMain.setCurrentItem(0);
-                mIvMainIndex.setImageDrawable(getDrawable(R.drawable.icon_homesel));
+                mIvMainIndex.setImageDrawable(getDrawable(R.drawable.ico_home_active));
                 mTvMainIndex.setTextColor(getResources().getColor(R.color.but_tintblue));
 
-                mIvMainMe.setImageDrawable(getDrawable(R.drawable.icon_mineselnot));
+                mIvMainMe.setImageDrawable(getDrawable(R.drawable.ico_smile_face_normal));
                 mTvMainMe.setTextColor(getResources().getColor(R.color.black));
                 break;
             //开始赚钱
@@ -256,10 +256,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             //个人中心
             case R.id.linear_main_me:
                 mNoVpMain.setCurrentItem(2);
-                mIvMainIndex.setImageDrawable(getDrawable(R.drawable.icon_homeselnot));
+                mIvMainIndex.setImageDrawable(getDrawable(R.drawable.ico_home_normal));
                 mTvMainIndex.setTextColor(getResources().getColor(R.color.black));
 
-                mIvMainMe.setImageDrawable(getDrawable(R.drawable.icon_minesel));
+                mIvMainMe.setImageDrawable(getDrawable(R.drawable.ico_smile_face_active));
                 mTvMainMe.setTextColor(getResources().getColor(R.color.but_tintblue));
                 break;
         }
